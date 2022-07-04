@@ -1,9 +1,11 @@
 import * as React from 'react';
-
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
+import Puzzle from './images/puzzle.svg'
+import New from './images/new.svg'
+import Door from './images/door.svg'
 
 const item = {
   display: 'flex',
@@ -30,20 +32,20 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src="/static/themes/onepirate/productValues1.svg"
-                alt="suitcase"
+                src={Puzzle}
+                alt="BrainPuzzle"
                 sx={{ height: 55 }}
               />
               <Typography variant="h6" sx={{ my: 5 }}>
-                The best luxury hotels
+                Immersive Puzzles
               </Typography>
               <Typography variant="h5">
                 {
-                  'From the latest trendy boutique hotel to the iconic palace with XXL pool'
+                  'Lose yourself in the command room trying to figure out "What happened here ?" '
                 }
 
                 {
-                  ', go for a mini-vacation just a few subway stops away from your home.'
+                  ', contemplate your own sanity in The Asylum.'
                 }
               </Typography>
             </Box>
@@ -52,8 +54,8 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src="/static/themes/onepirate/productValues2.svg"
-                alt="graph"
+                src={New}
+                alt="New Sign"
                 sx={{ height: 55 }}
               />
               <Typography variant="h6" sx={{ my: 5 }}>
@@ -61,10 +63,10 @@ function ProductValues() {
               </Typography>
               <Typography variant="h5">
                 {
-                  'Privatize a pool, take a Japanese bath or wake up in 900m2 of garden… '
+                  'We are always thinking up and designing New rooms.  '
                 }
 
-                {'your Sundays will not be alike.'}
+                {'Always check back to see what rooms are in rotation and try something new!'}
               </Typography>
             </Box>
           </Grid>
@@ -72,16 +74,16 @@ function ProductValues() {
             <Box sx={item}>
               <Box
                 component="img"
-                src="/static/themes/onepirate/productValues3.svg"
-                alt="clock"
+                src={Door}
+                alt="A Door"
                 sx={{ height: 55 }}
               />
               <Typography variant="h6" sx={{ my: 5 }}>
-                Exclusive rates
+                A Room With A Mood
               </Typography>
               <Typography variant="h5">
-                {'By registering, you will access specially negotiated rates '}
-                {'that you will not find anywhere else.'}
+                {'We have rooms of all difficulties and styles. '}
+                {'Bring the family to try your hand at Gold rush, or bring your friends for an eerie terror in Silence Of The Lambs. '}
               </Typography>
             </Box>
           </Grid>
