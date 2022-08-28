@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import AppBar from '../components/AppBar';
 import Toolbar from '../components/Toolbar';
+import withRoot from '../withRoot';
 function AppAppBar() {
   return (
     <div>
@@ -27,4 +28,4 @@ function AppAppBar() {
   );
 }
 
-export default AppAppBar;
+export default withRoot(AppAppBar);

@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
+import withRoot from '../withRoot';
 
 
 function Copyright() {
@@ -32,7 +33,7 @@ const iconStyle = {
 };
 
 
-export default function AppFooter() {
+function AppFooter() {
   return (
     <Typography
       component="footer"
@@ -99,3 +100,6 @@ export default function AppFooter() {
     </Typography>
   );
 }
+
+
+export default withRoot(AppFooter);
