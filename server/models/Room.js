@@ -38,3 +38,5 @@ const roomSchema = new Schema(
 
   }
 );
+
+module.exports = Room;
