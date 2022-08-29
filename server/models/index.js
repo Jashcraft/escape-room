@@ -1,4 +1,5 @@
 const User = require('./User');
+const Room = require('./Room');
 
 
-module.exports = { User };
+module.exports = { User, Room };
