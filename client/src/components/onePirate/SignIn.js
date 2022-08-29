@@ -72,6 +72,7 @@ export default function SignInSide() {
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
+            {/* TODO add page to direct to once user is logged in (as well as actual login handling) */}
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
@@ -105,6 +106,7 @@ export default function SignInSide() {
               >
                 Sign In
               </Button>
+              {/* TODO add page for forgot password form */}
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
