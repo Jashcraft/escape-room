@@ -17,7 +17,7 @@ function AppAppBar() {
             href="/premium-themes/onepirate/"
             sx={{ fontSize: 24 }}
           >
-            {'Escape Room In Colorado'}
+            {'Pandora Escapes'}
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
           </Box>
