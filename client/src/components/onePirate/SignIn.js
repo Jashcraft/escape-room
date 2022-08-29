@@ -1,117 +1,122 @@
 import * as React from 'react';
-import { Field, Form, FormSpy } from 'react-final-form';
-import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
-import Typography from './modules/components/Typography';
-import AppFooter from './modules/views/AppFooter';
-import AppAppBar from './modules/views/AppAppBar';
-import AppForm from './modules/views/AppForm';
-import { email, required } from './modules/form/validation';
-import RFTextField from './modules/form/RFTextField';
-import FormButton from './modules/form/FormButton';
-import FormFeedback from './modules/form/FormFeedback';
-import withRoot from './modules/withRoot';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function SignIn() {
-  const [sent, setSent] = React.useState(false);
-
-  const validate = (values) => {
-    const errors = required(['email', 'password'], values);
-
-    if (!errors.email) {
-      const emailError = email(values.email);
-      if (emailError) {
-        errors.email = emailError;
-      }
-    }
-
-    return errors;
-  };
-
-  const handleSubmit = () => {
-    setSent(true);
-  };
-
+function Copyright(props) {
   return (
-    <React.Fragment>
-      <AppAppBar />
-      <AppForm>
-        <React.Fragment>
-          <Typography variant="h3" gutterBottom marked="center" align="center">
-            Sign In
-          </Typography>
-          <Typography variant="body2" align="center">
-            {'Not a member yet? '}
-            <Link
-              href="/premium-themes/onepirate/sign-up/"
-              align="center"
-              underline="always"
-            >
-              Sign Up here
-            </Link>
-          </Typography>
-        </React.Fragment>
-        <Form
-          onSubmit={handleSubmit}
-          subscription={{ submitting: true }}
-          validate={validate}
-        >
-          {({ handleSubmit: handleSubmit2, submitting }) => (
-            <Box component="form" onSubmit={handleSubmit2} noValidate sx={{ mt: 6 }}>
-              <Field
-                autoComplete="email"
-                autoFocus
-                component={RFTextField}
-                disabled={submitting || sent}
-                fullWidth
-                label="Email"
-                margin="normal"
-                name="email"
-                required
-                size="large"
-              />
-              <Field
-                fullWidth
-                size="large"
-                component={RFTextField}
-                disabled={submitting || sent}
-                required
-                name="password"
-                autoComplete="current-password"
-                label="Password"
-                type="password"
-                margin="normal"
-              />
-              <FormSpy subscription={{ submitError: true }}>
-                {({ submitError }) =>
-                  submitError ? (
-                    <FormFeedback error sx={{ mt: 2 }}>
-                      {submitError}
-                    </FormFeedback>
-                  ) : null
-                }
-              </FormSpy>
-              <FormButton
-                sx={{ mt: 3, mb: 2 }}
-                disabled={submitting || sent}
-                size="large"
-                color="secondary"
-                fullWidth
-              >
-                {submitting || sent ? 'In progress…' : 'Sign In'}
-              </FormButton>
-            </Box>
-          )}
-        </Form>
-        <Typography align="center">
-          <Link underline="always" href="/premium-themes/onepirate/forgot-password/">
-            Forgot password?
-          </Link>
-        </Typography>
-      </AppForm>
-      <AppFooter />
-    </React.Fragment>
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Pandora Escapes
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
   );
 }
 
-export default withRoot(SignIn);
+const theme = createTheme();
+
+export default function SignInSide() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Grid container component="main" sx={{ height: '100vh' }}>
+        <CssBaseline />
+        <Grid
+          item
+          xs={false}
+          sm={4}
+          md={7}
+          sx={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1599067897079-aedd464866d6)',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: (t) =>
+              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <Box
+            sx={{
+              my: 8,
+              mx: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Remember me"
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign In
+              </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
+                  </Link>
+                </Grid>
+              </Grid>
+              <Copyright sx={{ mt: 5 }} />
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </ThemeProvider>
+  );
+}
