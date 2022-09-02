@@ -1,6 +1,7 @@
 const userSeeds = require('./userSeed.json');
+const roomSeeds = require('./roomSeed.json');
 const db = require('../config/connection');
-const { User } = require('../models');
+const { User, Room } = require('../models');
 
 db.once('open', async () => {
     try {
@@ -8,6 +9,10 @@ db.once('open', async () => {
       await User.deleteMany({});
 
       await User.create(userSeeds);
+
+      await Room.deleteMany({});
+
+      await Room.create(roomSeeds);
 
     } catch (err) {
       console.error(err);

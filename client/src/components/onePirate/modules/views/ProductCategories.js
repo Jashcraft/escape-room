@@ -4,12 +4,9 @@ import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Container from '@mui/material/Container';
 import Typography from '../components/Typography';
-import Jurassic from './images/jurassic.jpg';
-import Kidnap from './images/kidnap.jpg'
-import Temple from './images/temple.jpg'
-import Dragon from './images/dragon.jpg'
-import Alien from './images/alien.jpg'
-import Asylum from './images/asylum.jpg'
+import { useQuery } from '@apollo/client';
+import { GET_ROOMS } from '../utils/queries';
+
 
 const ImageBackdrop = styled('div')(({ theme }) => ({
   position: 'absolute',
@@ -21,6 +18,8 @@ const ImageBackdrop = styled('div')(({ theme }) => ({
   opacity: 0.5,
   transition: theme.transitions.create('opacity'),
 }));
+
+
 
 const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
@@ -59,52 +58,49 @@ const ImageIconButton = styled(ButtonBase)(({ theme }) => ({
   },
 }));
 
-const images = [
+const imageWidths = [
   {
-    url: Jurassic,
-    title: 'Jurassic',
     width: '40%',
   },
   {
-    url: Temple,
-    title: 'Temple Of Doom',
     width: '20%',
   },
   {
-    url: Kidnap,
-    title: 'Kidnapped',
     width: '40%',
   },
   {
-    url: Dragon,
-    title: 'Dungeons & Dragons',
     width: '38%',
   },
   {
-    url: Alien,
-    title: 'Area 51',
     width: '38%',
   },
   {
-    url: Asylum,
-    title: 'Asylum',
     width: '24%',
   }
 ];
 
 export default function ProductCategories() {
+  
+  const {loading, error, data: roomData} = useQuery(GET_ROOMS);
+  console.log(roomData);
+
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+
+
   return (
     <Container component="section" sx={{ mt: 8, mb: 4 }}>
       <Typography variant="h4" marked="center" align="center" component="h2">
         Check Out Our Current Rooms
       </Typography>
       <Box sx={{ mt: 8, display: 'flex', flexWrap: 'wrap' }}>
-        {images.map((image) => (
+        {roomData.rooms.map((room, i) => (
           <ImageIconButton
-            key={image.title}
+            key={room.name}
             style={{
-              width: image.width,
+              width: imageWidths[i].width,
             }}
+            href={`/room/${room._id}`}
           >
             <Box
               sx={{
@@ -115,7 +111,7 @@ export default function ProductCategories() {
                 bottom: 0,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center 40%',
-                backgroundImage: `url(${image.url})`,
+                backgroundImage: `url(${room.imageLocation})`,
               }}
             />
             <ImageBackdrop className="imageBackdrop" />
@@ -138,7 +134,7 @@ export default function ProductCategories() {
                 color="inherit"
                 className="imageTitle"
               >
-                {image.title}
+                {room.name}
                 <div className="imageMarked" />
               </Typography>
             </Box>

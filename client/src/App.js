@@ -43,7 +43,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/room/:name' element={<RoomPage />} />
+            <Route path='/room/:id' element={<RoomPage />} />
             <Route path='/login' element={<SignInSide/>} />
           </Routes>
         </BrowserRouter>

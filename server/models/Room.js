@@ -34,6 +34,10 @@ const roomSchema = new Schema(
       type: Number,
       required: false,
       trim: true
+    },
+    imageLocation: {
+      type: String,
+      required: true
     }
 
   }
