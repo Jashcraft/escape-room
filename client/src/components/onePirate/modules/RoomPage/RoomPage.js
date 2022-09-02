@@ -1,24 +1,36 @@
 
+import { useQuery } from '@apollo/client';
 import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Paper, Select } from '@mui/material';
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
 import Typography from '../components/Typography';
+import { GET_ROOM } from '../utils/queries';
 import RoomPhoto from '../views/images/dragon.jpg'
 
 const RoomPage = () => {
-  const { name } = useParams()
+  const { id } = useParams()
+  const {loading, error, data: roomdata} = useQuery(GET_ROOM, {
+    variables: {
+      roomId: id
+    }
+  })
+  
+
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+  console.log(roomdata)
 
   return (
     <Grid container>
       <Grid item md={8} xs={12} >
         <Grid container justifyContent='center' >
-          <Typography variant='h2' >Dungeons & Dragons</Typography> {/* Name of room grab from DB*/}
+          <Typography variant='h2' >{roomdata.room.name}</Typography> 
         </Grid>
         <Grid container justifyContent='center'>
           {/* room photo*/}
           <Box
             component='img'
-            src={RoomPhoto}
+            src={roomdata.room.imageLocation}
             sx={{
               width: '80%',
               mt: 5,
@@ -28,11 +40,11 @@ const RoomPage = () => {
         <Grid>
           <Grid container justifyContent='center'>
             {/* Room Description */}
-            <Typography variant='h5' sx={{ width: '65%', mt: 5 }}> This room was developed in 1862 When Steve Dr. "McGree" Phillips had an unfortunate encoutner with a small dragon by the name of Donkle. The recipe was passed down for several generations until it wound up in the hands of the british museum. This was stolen over christmas eve by the doctors greatish grandaughter Jane who took the plans and constructed the room at our facility.</Typography>
+            <Typography variant='h5' sx={{ width: '65%', mt: 5 }}>{roomdata.room.description}</Typography>
           </Grid>
           <Grid container justifyContent='center'>
             {/* Room Statistics */}
-            <Typography variant='h5' sx={{ width: '65%', mt: 5, mb: 5 }}> This room was developed in 1862 When Steve Dr. "McGree" Phillips had an unfortunate encoutner with a small dragon by the name of Donkle. The recipe was passed down for several generations until it wound up in the hands of the british museum. This was stolen over christmas eve by the doctors greatish grandaughter Jane who took the plans and constructed the room at our facility.</Typography>
+            <Typography variant='h5' sx={{ width: '65%', mt: 5, mb: 5 }}>Room Success Rate: {roomdata.room.successRate}%</Typography>
           </Grid>
         </Grid>
       </Grid>

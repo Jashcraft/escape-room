@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Room} = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -11,6 +11,14 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
+    },
+    rooms: async () => {
+      return Room.find()
+        .select('-__v')
+    },
+    room: async (parent, { id }) => {
+      return Room.findOne({ _id: id })
+        .select('-__v')
     }
   },
   Mutation: {

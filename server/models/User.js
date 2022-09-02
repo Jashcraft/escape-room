@@ -17,11 +17,20 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      match: [/.+@.+\..+/, 'Must match an email address!']
     },
     password: {
       type: String,
       required: true,
       minlength: 5
+    },
+    admin: {
+      type: Boolean,
+      required: true
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now
     }
   },
   {
@@ -46,7 +55,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual("fullName").get(() => {
+userSchema.virtual("fullName").get( function() {
   return `${this.firstName} ${this.lastName}`
 })
 

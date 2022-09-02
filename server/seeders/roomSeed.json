@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Jurassic",
+    "location": "Denver",
+    "description" : "Oh No! This room is full of dinosuars!",
+    "maxNumberOfParticipants": 1,
+    "minNumberOfParticipants": 6,
+    "minAgeRequirement": 5,
+    "successRate": 45,
+    "imageLocation": "https://i.imgur.com/5mXQFTE.jpg"
+
+  },
+  {
+    "name": "Temple Of Doom",
+    "location": "Denver",
+    "description" : "So much doom ... and it's in a temple!",
+    "maxNumberOfParticipants": 4,
+    "minNumberOfParticipants": 6,
+    "minAgeRequirement": 18,
+    "successRate": 92,
+    "imageLocation": "https://i.imgur.com/jH1lJ5M.jpg"
+  },
+  {
+    "name": "Kidnapped",
+    "location": "Denver",
+    "description" : "Liam Niesen is back... and he's pissed",
+    "maxNumberOfParticipants": 4,
+    "minNumberOfParticipants": 12,
+    "minAgeRequirement": 18,
+    "successRate": 60,
+    "imageLocation": "https://i.imgur.com/eArQziD.jpg"
+  },
+  {
+    "name": "Dungeons & Dragons",
+    "location": "Denver",
+    "description" : "Liam Niesen is back... and he's on a dragon",
+    "maxNumberOfParticipants": 4,
+    "minNumberOfParticipants": 8,
+    "minAgeRequirement": 18,
+    "successRate": 62,
+    "imageLocation": "https://i.imgur.com/QJ5kijn.jpg"
+  },
+  {
+    "name": "Area 51",
+    "location": "Denver",
+    "description" : "Liam Niesen is back... and he's very upset you didn't call your grandmother on her birthday. I mean He knows you work a lot but it only takes 5 mins to call ...",
+    "maxNumberOfParticipants": 2,
+    "minNumberOfParticipants": 5,
+    "minAgeRequirement": 5,
+    "successRate": 62,
+    "imageLocation": "https://i.imgur.com/ZNr1nvl.jpg"
+  },
+  {
+    "name": "Asylum",
+    "location": "Denver",
+    "description" : "Liam Niesen is back... and he's unsure if you're real",
+    "maxNumberOfParticipants": 2,
+    "minNumberOfParticipants": 5,
+    "minAgeRequirement": 5,
+    "successRate": 62,
+    "imageLocation": "https://i.imgur.com/iHwjFPJ.jpg"
+  }
+]

@@ -7,6 +7,18 @@ const typeDefs = gql`
     lastName: String
     fullName: String
     email: String
+    admin: Boolean
+  }
+  type Room {
+    _id: ID
+    name: String
+    location: String
+    description: String
+    maxNumberOfParticipants: Int
+    minNumberOfParticipants: Int
+    minAgeRequirement: Int
+    successRate: Int
+    imageLocation: String
   }
   input AddUserInput{
     firstName: String
@@ -21,6 +33,8 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(id: ID): User
+    rooms: [Room]
+    room(id: ID!): Room
   }
   
 
