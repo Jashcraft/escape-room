@@ -13,6 +13,7 @@ import AppFooter from "./components/onePirate/modules/views/AppFooter";
 import AppAppBar from "./components/onePirate/modules/views/AppAppBar";
 import RoomPage from "./components/onePirate/modules/RoomPage/RoomPage";
 import SignInSide from "./components/onePirate/SignIn";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 
 const httpLink = createHttpLink({
@@ -45,6 +46,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/room/:id' element={<RoomPage />} />
             <Route path='/login' element={<SignInSide/>} />
+            <Route path='/dashboard' element={<Dashboard/>} />
           </Routes>
         </BrowserRouter>
         <AppFooter />
