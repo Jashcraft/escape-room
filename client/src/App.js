@@ -47,6 +47,7 @@ function App() {
             <Route path='/room/:id' element={<RoomPage />} />
             <Route path='/login' element={<SignInSide/>} />
             <Route path='/dashboard' element={<Dashboard/>} />
+            <Route path='/dashboard/:setting' element={<Dashboard/>} />
           </Routes>
         </BrowserRouter>
         <AppFooter />
