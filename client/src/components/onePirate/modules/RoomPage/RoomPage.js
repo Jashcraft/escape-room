@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import Typography from '../components/Typography';
 import { GET_ROOM } from '../utils/queries';
 import BookeoScript from './BookeoScript';
-import BookeoWidget from 'react-bookeo';
+import BookeoWidget from './BookeoWidgetPirate';
 
 
 const RoomPage = () => {
