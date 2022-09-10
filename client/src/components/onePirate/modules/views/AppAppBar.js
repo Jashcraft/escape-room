@@ -17,7 +17,7 @@ function AppAppBar() {
             href="/"
             sx={{ fontSize: 24 }}
           >
-            {'Pandora Escapes'}
+            {"Pandora's Escape"}
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
           </Box>

@@ -1,30 +1,34 @@
 
 import { useQuery } from '@apollo/client';
-import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Paper, Select } from '@mui/material';
-import * as React from 'react';
+import { Box, Grid, Paper } from '@mui/material';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import Typography from '../components/Typography';
 import { GET_ROOM } from '../utils/queries';
-import RoomPhoto from '../views/images/dragon.jpg'
+import BookeoScript from './BookeoScript';
+
 
 const RoomPage = () => {
   const { id } = useParams()
-  const {loading, error, data: roomdata} = useQuery(GET_ROOM, {
+  const { loading, error, data: roomdata } = useQuery(GET_ROOM, {
     variables: {
       roomId: id
     }
   })
-  
+
 
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
-  console.log(roomdata)
+
+
+
+
 
   return (
     <Grid container>
       <Grid item md={8} xs={12} >
         <Grid container justifyContent='center' >
-          <Typography variant='h2' >{roomdata.room.name}</Typography> 
+          <Typography variant='h2' >{roomdata.room.name}</Typography>
         </Grid>
         <Grid container justifyContent='center'>
           {/* room photo*/}
@@ -48,7 +52,7 @@ const RoomPage = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item md={3} xs={12} sx={{ border: 'solid 5px black', mt: 5, mb: 5, boxSizing: 'border-box',  }}>
+      <Grid item md={3} xs={12} sx={{ border: 'solid 5px black', mt: 5, mb: 5, boxSizing: 'border-box', }}>
         <Grid container justifyContent='center'>
           {/* Room Hours and Location  */}
           <Paper elevation={2} sx={{ width: '95%', mt: 2, }}>
@@ -79,38 +83,8 @@ const RoomPage = () => {
 
           <Paper elevation={2} sx={{ width: '95%', mt: 2, height: '95%' }}>
             <Typography variant='h4' sx={{ ml: 2, mt: 1, textAlign: 'center' }}>Book Now!</Typography>
-            <Grid container justifyContent='center' >
-            <FormControl sx={{ width: '88%'}}>
-              <Typography >How many Members in your group?</Typography>
-              <InputLabel id="demo-simple-select-label" ></InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value=''
-                label="Age"
-              >
-                <MenuItem value={4}>4</MenuItem>
-                <MenuItem value={5}>5</MenuItem>
-                <MenuItem value={6}>6</MenuItem>
-              </Select>
-            </FormControl>
-            <FormControl sx={{ width: '88%' }}>
-              <Typography sx={{ mt: 3 }}>Choose a TimeSlot</Typography>
-              <InputLabel id="demo-simple-select-label"></InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value=''
-                label="Age"
-              >
-                <MenuItem value={4}>6:30pm</MenuItem>
-                <MenuItem value={5}>7:30pm</MenuItem>
-                <MenuItem value={6}>8:30pm</MenuItem>
-              </Select>
-            </FormControl>
-            <Button variant="contained" color="success" sx={{mt: 2, mb: 2}}>
-              Checkout
-            </Button>
+            <Grid container justifyContent='center' id='bookeo-anchor' >
+              <BookeoScript></BookeoScript>
             </Grid>
           </Paper>
         </Grid>

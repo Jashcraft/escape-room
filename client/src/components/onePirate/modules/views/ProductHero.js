@@ -17,7 +17,7 @@ export default function ProductHero() {
     >
       {/* Increase the network loading priority of the background image. */}
       <Typography color="inherit" align="center" variant="h2" marked="center">
-        Escape Your Week At Pandora Escapes
+        Escape Your Week At Pandora's Escape
       </Typography>
       <Button
         color="secondary"
