@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import Typography from '../components/Typography';
 import { GET_ROOM } from '../utils/queries';
 import BookeoScript from './BookeoScript';
+import BookeoWidget from 'react-bookeo';
 
 
 const RoomPage = () => {
@@ -84,7 +85,10 @@ const RoomPage = () => {
           <Paper elevation={2} sx={{ width: '95%', mt: 2, height: '95%' }}>
             <Typography variant='h4' sx={{ ml: 2, mt: 1, textAlign: 'center' }}>Book Now!</Typography>
             <Grid container justifyContent='center' id='bookeo-anchor' >
-              <BookeoScript></BookeoScript>
+              {/* <BookeoScript></BookeoScript> */}
+              <BookeoWidget url='https://bookeo.com/widget.js?a=3150HYKPLT1830A9B3FAF'/>
+
+              
             </Grid>
           </Paper>
         </Grid>
