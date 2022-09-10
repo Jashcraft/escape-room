@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+// @ts-nocheck
 import React from "react";
 import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
@@ -15,7 +17,7 @@ const Loading = ({ waitMessage }) => (
 
 const containerStyle = {
   textAlign: "center",
-  margin: "2em auto"
+  margin: "2em auto",
 };
 
 const loadScript = (url, cb, timeout = 1000) => {
@@ -25,10 +27,11 @@ const loadScript = (url, cb, timeout = 1000) => {
   script.onload = () =>
     setTimeout(() => {
       // ensure bookeo started
-      var shouldTriggerWidget = axiomct_div === undefined && !axiomct_spinner;
+      var shouldTriggerWidget =
+        window.axiomct_div === undefined && !window.axiomct_spinner;
       //var bookeoContentLoaded = typeof axiomct_div !== "undefined" && axiomct_div && axiomct_div.querySelectorAll('iframe').length;
       if (shouldTriggerWidget) {
-        axiomct_onload();
+        window.axiomct_onload();
       }
       if (cb) {
         cb();
@@ -39,7 +42,7 @@ const loadScript = (url, cb, timeout = 1000) => {
 
 class BookeoWidget extends React.Component {
   state = {
-    loading: true
+    loading: true,
   };
   componentDidMount() {
     this.mounted = true;
@@ -63,16 +66,16 @@ class BookeoWidget extends React.Component {
       ReactDOM.findDOMNode(this)
         .querySelectorAll("script[src*='bookeo.com']")
         .forEach(
-          node =>
+          (node) =>
             node && node.parentElement && node.parentElement.removeChild(node)
         );
       if (typeof axiomct_div !== "undefined") {
-        axiomct_div.parentElement.removeChild(axiomct_div);
-        axiomct_div = undefined;
+        window.axiomct_div.parentElement.removeChild(window.axiomct_div);
+        window.axiomct_div = undefined;
       }
-      axiomct_spinner = undefined;
-      axiomct_project = undefined;
-      axiomct_loadStarted = false;
+      window.axiomct_spinner = undefined;
+      window.axiomct_project = undefined;
+      window.axiomct_loadStarted = false;
     } catch (e) {
       console.log(e);
     }
@@ -82,7 +85,7 @@ class BookeoWidget extends React.Component {
       const script = loadScript(this.props.url, () => {
         if (this.mounted) {
           this.setState(() => ({
-            loading: false
+            loading: false,
           }));
         }
       });
@@ -105,7 +108,7 @@ class BookeoWidget extends React.Component {
 BookeoWidget.propTypes = {
   // widget url, as defined in bookeo parameters
   url: PropTypes.string.isRequired,
-  waitMessage: PropTypes.string
+  waitMessage: PropTypes.string,
 };
 
 export default BookeoWidget;
