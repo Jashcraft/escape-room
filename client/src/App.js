@@ -11,9 +11,10 @@ import { LocalizationProvider } from "@mui/x-date-pickers-pro";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import AppFooter from "./components/onePirate/modules/views/AppFooter";
 import AppAppBar from "./components/onePirate/modules/views/AppAppBar";
-import RoomPage from "./components/onePirate/modules/RoomPage/RoomPage";
+import RoomPage from "./components/RoomPage/RoomPage";
 import SignInSide from "./components/onePirate/SignIn";
 import Dashboard from "./components/Dashboard/Dashboard";
+import BookPage from "./components/BookPage/BookPage";
 
 
 const httpLink = createHttpLink({
@@ -48,6 +49,7 @@ function App() {
             <Route path='/login' element={<SignInSide/>} />
             <Route path='/dashboard' element={<Dashboard/>} />
             <Route path='/dashboard/:setting' element={<Dashboard/>} />
+            <Route path='/book' element={<BookPage/>} />
           </Routes>
         </BrowserRouter>
         <AppFooter />
