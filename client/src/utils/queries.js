@@ -14,9 +14,9 @@ export const GET_ROOMS = gql`
       imageLocation
     }
   }
-`
+`;
 export const GET_ROOM = gql`
-  query($roomId: ID!) {
+  query ($roomId: ID!) {
     room(id: $roomId) {
       _id
       name
@@ -27,7 +27,7 @@ export const GET_ROOM = gql`
       minAgeRequirement
       successRate
       imageLocation
+      typeId
     }
   }
-`
-
+`;

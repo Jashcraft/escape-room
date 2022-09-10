@@ -1,63 +1,68 @@
 [
   {
-    "name": "Jurassic",
+    "name": "Old West Heist",
     "location": "Denver",
-    "description" : "Oh No! This room is full of dinosuars!",
+    "description": "Oh No! This room is full of dinosuars!",
     "maxNumberOfParticipants": 1,
     "minNumberOfParticipants": 6,
     "minAgeRequirement": 5,
     "successRate": 45,
-    "imageLocation": "https://i.imgur.com/5mXQFTE.jpg"
-
+    "imageLocation": "https://i.imgur.com/5mXQFTE.jpg",
+    "typeId": "31506LKX9W18310C93A90"
   },
   {
-    "name": "Temple Of Doom",
+    "name": "Team Building Blackout! Goldmine!",
     "location": "Denver",
-    "description" : "So much doom ... and it's in a temple!",
+    "description": "So much doom ... and it's in a temple!",
     "maxNumberOfParticipants": 4,
     "minNumberOfParticipants": 6,
     "minAgeRequirement": 18,
     "successRate": 92,
-    "imageLocation": "https://i.imgur.com/jH1lJ5M.jpg"
+    "imageLocation": "https://i.imgur.com/jH1lJ5M.jpg",
+    "typeId": "3150APWEKK18310D34DAC"
   },
   {
-    "name": "Kidnapped",
+    "name": "Silence of the Lamb Murder",
     "location": "Denver",
-    "description" : "Liam Niesen is back... and he's pissed",
+    "description": "Liam Niesen is back... and he's pissed",
     "maxNumberOfParticipants": 4,
     "minNumberOfParticipants": 12,
     "minAgeRequirement": 18,
     "successRate": 60,
-    "imageLocation": "https://i.imgur.com/eArQziD.jpg"
+    "imageLocation": "https://i.imgur.com/eArQziD.jpg",
+    "typeId": "315043JNKF18310D98D89"
   },
   {
     "name": "Dungeons & Dragons",
     "location": "Denver",
-    "description" : "Liam Niesen is back... and he's on a dragon",
+    "description": "Liam Niesen is back... and he's on a dragon",
     "maxNumberOfParticipants": 4,
     "minNumberOfParticipants": 8,
     "minAgeRequirement": 18,
     "successRate": 62,
-    "imageLocation": "https://i.imgur.com/QJ5kijn.jpg"
+    "imageLocation": "https://i.imgur.com/QJ5kijn.jpg",
+    "typeId": "31509FL7AE18310B391A5"
   },
   {
     "name": "Area 51",
     "location": "Denver",
-    "description" : "Liam Niesen is back... and he's very upset you didn't call your grandmother on her birthday. I mean He knows you work a lot but it only takes 5 mins to call ...",
+    "description": "Liam Niesen is back... and he's very upset you didn't call your grandmother on her birthday. I mean He knows you work a lot but it only takes 5 mins to call ...",
     "maxNumberOfParticipants": 2,
     "minNumberOfParticipants": 5,
     "minAgeRequirement": 5,
     "successRate": 62,
-    "imageLocation": "https://i.imgur.com/ZNr1nvl.jpg"
+    "imageLocation": "https://i.imgur.com/ZNr1nvl.jpg",
+    "typeId": "3150KNUWW41830A9DE3A4"
   },
   {
     "name": "Asylum",
     "location": "Denver",
-    "description" : "Liam Niesen is back... and he's unsure if you're real",
+    "description": "Liam Niesen is back... and he's unsure if you're real",
     "maxNumberOfParticipants": 2,
     "minNumberOfParticipants": 5,
     "minAgeRequirement": 5,
     "successRate": 62,
-    "imageLocation": "https://i.imgur.com/iHwjFPJ.jpg"
+    "imageLocation": "https://i.imgur.com/iHwjFPJ.jpg",
+    "typeId": "3150CEJK9N18310C109E0"
   }
 ]
