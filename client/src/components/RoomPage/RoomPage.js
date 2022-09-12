@@ -50,6 +50,7 @@ const RoomPage = () => {
             <Typography variant="h5" sx={{ width: "65%", mt: 5, mb: 5 }}>
               Room Success Rate: {roomdata.room.successRate}%
             </Typography>
+            <Typography>Room Time Limit: {roomdata.room.duration}%</Typography>
           </Grid>
         </Grid>
       </Grid>

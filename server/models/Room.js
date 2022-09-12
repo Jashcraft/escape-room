@@ -42,6 +42,10 @@ const roomSchema = new Schema({
     type: String,
     required: true,
   },
+  duration: {
+    type: Number,
+    required: true
+  }
 });
 
 const Room = model("Room", roomSchema);
