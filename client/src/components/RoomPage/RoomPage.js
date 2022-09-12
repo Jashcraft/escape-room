@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { Box, Button, Grid, Paper } from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
 import Typography from "../onePirate/modules/components/Typography";
@@ -17,6 +17,7 @@ const RoomPage = () => {
       roomId: id,
     },
   });
+  console.log(roomdata);
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
@@ -45,12 +46,15 @@ const RoomPage = () => {
               {roomdata.room.description}
             </Typography>
           </Grid>
-          <Grid container justifyContent="center">
+          <Grid container alignItems="center" flexDirection="column">
             {/* Room Statistics */}
             <Typography variant="h5" sx={{ width: "65%", mt: 5, mb: 5 }}>
               Room Success Rate: {roomdata.room.successRate}%
             </Typography>
-            <Typography>Room Time Limit: {roomdata.room.duration}%</Typography>
+            
+            <Grid>
+              <Typography variant="h5" sx={{ width: "100%", mt: 5, mb: 5 }}>Room Time Limit: {roomdata.room.duration} mins</Typography>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
@@ -100,33 +104,30 @@ const RoomPage = () => {
             <Typography variant="h5" sx={{ ml: 2, mt: 1 }}>
               Address:
             </Typography>
-            <Typography sx={{ ml: 2, mt: 1 }}>555 E El Camino Real</Typography>
-            <Typography sx={{ ml: 2, mt: 1 }}>Sunnyvale, Ca</Typography>
-            <Typography sx={{ ml: 2, mt: 1 }}>85221</Typography>
+            <Typography sx={{ ml: 2, mt: 1 }}>6000 E Evans Ave #3-205</Typography>
+            <Typography sx={{ ml: 2, mt: 1 }}>Denver, Co</Typography>
+            <Typography sx={{ ml: 2, mt: 1 }}>80222</Typography>
 
             <Typography variant="h5" sx={{ ml: 2, mt: 1 }}>
-              Phone Number
+              Phone Number:
             </Typography>
-            <Typography sx={{ ml: 2, mt: 1, mb: 2 }}> 303 303 3033</Typography>
+            <Typography sx={{ ml: 2, mt: 1, mb: 2 }} href={`tel:7204227055`}>720 422 7055</Typography>
           </Paper>
         </Grid>
         <Grid container justifyContent="center" alignContent="space-between">
           {/* Buy Box */}
 
           <Paper elevation={2} sx={{ width: "95%", mt: 2, height: "95%" }}>
-            <Button href="/book">
-              <Typography
-                variant="h4"
-                sx={{ ml: 2, mt: 1, textAlign: "center" }}
-              >
-                Book Now!
-              </Typography>
-            </Button>
+
+            <Typography
+              variant="h4"
+              sx={{ ml: 2, mt: 1, textAlign: "center" }}
+            >Check Our Availability!</Typography>
+
             <Grid id="bookeo-anchor">
               <BookeoWidget
-                url={`https://bookeo.com/widget.js?a=3150HYKPLT1830A9B3FAF${
-                  roomdata.room.typeId ? `&type=${roomdata.room.typeId}` : ""
-                }`}
+                url={`https://bookeo.com/widget.js?a=3150HYKPLT1830A9B3FAF${roomdata.room.typeId ? `&type=${roomdata.room.typeId}` : ""
+                  }`}
               />
             </Grid>
           </Paper>

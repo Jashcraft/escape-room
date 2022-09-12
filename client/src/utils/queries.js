@@ -12,6 +12,7 @@ export const GET_ROOMS = gql`
       minAgeRequirement
       successRate
       imageLocation
+      duration
     }
   }
 `;
@@ -28,6 +29,7 @@ export const GET_ROOM = gql`
       successRate
       imageLocation
       typeId
+      duration
     }
   }
 `;

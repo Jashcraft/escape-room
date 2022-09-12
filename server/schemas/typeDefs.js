@@ -20,6 +20,7 @@ const typeDefs = gql`
     successRate: Int
     imageLocation: String
     typeId: String
+    duration: Int
   }
   input AddUserInput {
     firstName: String
