@@ -17,17 +17,17 @@ export default function ProductHero() {
     >
       {/* Increase the network loading priority of the background image. */}
       <Typography color="inherit" align="center" variant="h2" marked="center">
-        Escape Your Week At Pandora Escapes
+        Escape Your Week At Pandora's Escape
       </Typography>
       <Button
         color="secondary"
         variant="contained"
         size="large"
         component="a"
-        href="/premium-themes/onepirate/sign-up/"
+        href="#rooms"
         sx={{ minWidth: 200 }}
       >
-        Book Now
+        Check Out Our Rooms
       </Button>
     </ProductHeroLayout>
   );

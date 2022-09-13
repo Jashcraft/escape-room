@@ -1,63 +1,74 @@
 [
   {
-    "name": "Jurassic",
+    "name": "Old West Heist",
     "location": "Denver",
-    "description" : "Oh No! This room is full of dinosuars!",
-    "maxNumberOfParticipants": 1,
-    "minNumberOfParticipants": 6,
+    "description": "You're all bandits in the old wild west! My gang is looking to recruit new blood. Find the diamond locked away in the bank and bring it to me before the sheriff arrests you all!",
+    "maxNumberOfParticipants": 6,
+    "minNumberOfParticipants": 2,
     "minAgeRequirement": 5,
     "successRate": 45,
-    "imageLocation": "https://i.imgur.com/5mXQFTE.jpg"
-
+    "imageLocation": "https://i.imgur.com/pOM5EJu.jpg",
+    "typeId": "31506LKX9W18310C93A90",
+    "duration": 60
   },
   {
-    "name": "Temple Of Doom",
+    "name": "Goldmine!",
     "location": "Denver",
-    "description" : "So much doom ... and it's in a temple!",
-    "maxNumberOfParticipants": 4,
-    "minNumberOfParticipants": 6,
+    "description": "Team Building Blackout!:  This is our competition room! You will be split up into 2 rival mining teams on the hunt for the world's largest golden nugget! Unfortunately, the mine is unstable and your exit has been blocked! You have 1 hour to find the gold and escape the mine before it collapses! There's only 1 way out, only 1 team will make it!",
+    "maxNumberOfParticipants": 8,
+    "minNumberOfParticipants": 4,
     "minAgeRequirement": 18,
     "successRate": 92,
-    "imageLocation": "https://i.imgur.com/jH1lJ5M.jpg"
+    "imageLocation": "https://i.imgur.com/Pz4e0L4.jpg",
+    "typeId": "3150APWEKK18310D34DAC",
+    "duration": 60
   },
   {
-    "name": "Kidnapped",
+    "name": "Silence of the Lamb",
     "location": "Denver",
-    "description" : "Liam Niesen is back... and he's pissed",
-    "maxNumberOfParticipants": 4,
-    "minNumberOfParticipants": 12,
+    "description": "You and your team have been after a notorious serial killer for years. You think you’ve finally nailed down his hideout and you’re about to get the arrest of the century! Then you realize that it was a trap set by the killer! He has booby trapped the house and you have 1 hour to solve this mystery and escape the house!",
+    "maxNumberOfParticipants": 6,
+    "minNumberOfParticipants": 2,
     "minAgeRequirement": 18,
     "successRate": 60,
-    "imageLocation": "https://i.imgur.com/eArQziD.jpg"
+    "imageLocation": "https://i.imgur.com/eArQziD.jpg",
+    "typeId": "315043JNKF18310D98D89",
+    "duration": 60
   },
   {
     "name": "Dungeons & Dragons",
     "location": "Denver",
-    "description" : "Liam Niesen is back... and he's on a dragon",
-    "maxNumberOfParticipants": 4,
-    "minNumberOfParticipants": 8,
-    "minAgeRequirement": 18,
+    "description": "Your band of adventures has been sent to a small village to break an evil curse set upon them by the Cult of the Dracos Flame! To break the curse, you must find the glowing potion, find the dragon, and place the potion in her mouth to stop her from breathing fire and put her to sleep for next 100 years! But, Before you found the potion, you were captured by the cult and you are now awaiting your execution by dragon fire.... try to escape and break the curse before your fiery doom!",
+    "maxNumberOfParticipants": 6,
+    "minNumberOfParticipants": 2,
+    "minAgeRequirement": 5,
     "successRate": 62,
-    "imageLocation": "https://i.imgur.com/QJ5kijn.jpg"
+    "imageLocation": "https://i.imgur.com/QJ5kijn.jpg",
+    "typeId": "31509FL7AE18310B391A5",
+    "duration": 60
   },
   {
     "name": "Area 51",
     "location": "Denver",
-    "description" : "Liam Niesen is back... and he's very upset you didn't call your grandmother on her birthday. I mean He knows you work a lot but it only takes 5 mins to call ...",
-    "maxNumberOfParticipants": 2,
-    "minNumberOfParticipants": 5,
+    "description": "They can't stop all of us, right? Well, you made it into the Bunker! Now you must find the briefcase which contains Area 51's darkest secret before the scientists return in 1 hour! Be out before they return.... those scientists LOVE to experiment!",
+    "maxNumberOfParticipants": 6,
+    "minNumberOfParticipants": 2,
     "minAgeRequirement": 5,
     "successRate": 62,
-    "imageLocation": "https://i.imgur.com/ZNr1nvl.jpg"
+    "imageLocation": "https://i.imgur.com/ZNr1nvl.jpg",
+    "typeId": "3150KNUWW41830A9DE3A4",
+    "duration": 60
   },
   {
     "name": "Asylum",
     "location": "Denver",
-    "description" : "Liam Niesen is back... and he's unsure if you're real",
-    "maxNumberOfParticipants": 2,
-    "minNumberOfParticipants": 5,
+    "description": "You and your friends found a creepy asylum and want to take a look around. Rumors of disappearances, ghosts, and demons have been circulating about this place... The door slams shut behind you and a timer starts! You have 90 minutes to escape the Asylum before you're trapped forever! Watch your backs... I've heard there's still a patient inside who never left…",
+    "maxNumberOfParticipants": 8,
+    "minNumberOfParticipants": 4,
     "minAgeRequirement": 5,
     "successRate": 62,
-    "imageLocation": "https://i.imgur.com/iHwjFPJ.jpg"
+    "imageLocation": "https://i.imgur.com/iHwjFPJ.jpg",
+    "typeId": "3150CEJK9N18310C109E0",
+    "duration": 90
   }
 ]
