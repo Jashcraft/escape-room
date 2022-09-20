@@ -29,6 +29,7 @@ export default function ProductHero() {
       >
         Check Out Our Rooms
       </Button>
+      <Typography variant='h5' sx={{fontStyle: 'italic', mt: '10px'}}>Formerly known as "Colorado Escapes"</Typography>
     </ProductHeroLayout>
   );
 }

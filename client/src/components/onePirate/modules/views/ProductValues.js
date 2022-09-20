@@ -37,15 +37,15 @@ function ProductValues() {
                 sx={{ height: 55 }}
               />
               <Typography variant="h6" sx={{ my: 5 }}>
-                Immersive Puzzles
+              Challenging:
               </Typography>
               <Typography variant="h5">
                 {
-                  'Lose yourself in the command room trying to figure out "What happened here ?" '
+                  'We have a variety of difficulty levels that will suit any and all escapists! '
                 }
 
                 {
-                  ', contemplate your own sanity in The Asylum.'
+                  'Whether it’s your first escape room or your thousandth, we have the perfect level for you and your team!'
                 }
               </Typography>
             </Box>
@@ -59,14 +59,14 @@ function ProductValues() {
                 sx={{ height: 55 }}
               />
               <Typography variant="h6" sx={{ my: 5 }}>
-                New experiences
+              Themes:
               </Typography>
               <Typography variant="h5">
                 {
-                  'We are always thinking up and designing New rooms.  '
+                  'From Sci-Fi to fantasy to adventure to horror, we have an array of themes to suit any of your interests!  '
                 }
 
-                {'Always check back to see what rooms are in rotation and try something new!'}
+                {'We have rooms for date nights, family nights, and spooky nights! Get your team together and select an adventure that fits your mood!'}
               </Typography>
             </Box>
           </Grid>
@@ -79,11 +79,11 @@ function ProductValues() {
                 sx={{ height: 55 }}
               />
               <Typography variant="h6" sx={{ my: 5 }}>
-                A Room With A Mood
+              Fun For All Ages:
               </Typography>
               <Typography variant="h5">
-                {'We have rooms of all difficulties and styles. '}
-                {'Bring the family to try your hand at Gold rush, or bring your friends for an eerie terror in Silence Of The Lambs. '}
+                {'Our puzzles and room designs are made for you to be creative and have fun with your family and friends! We challenge you to think outside the box and lead your group to victory!'}
+                {' **Some rooms are age restricted, please read room descriptions and terms of the room**'}
               </Typography>
             </Box>
           </Grid>
