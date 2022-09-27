@@ -16,6 +16,7 @@ import RoomPage from "./components/RoomPage/RoomPage";
 import SignInSide from "./components/onePirate/SignIn";
 import Dashboard from "./components/Dashboard/Dashboard";
 import BookPage from "./components/BookPage/BookPage";
+import Rules from "./components/RulesPage/Rules";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -49,6 +50,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashboard/:setting" element={<Dashboard />} />
             <Route path="/book" element={<BookPage />} />
+            <Route path="/rules" element={<Rules />} />
           </Routes>
         </BrowserRouter>
         <AppFooter />
