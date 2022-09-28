@@ -36,7 +36,7 @@ function AppAppBar() {
                 variant="h6"
                 underline="none"
                 color="inherit"
-                href="/contact-us"
+                href="/ContactUs"
                 sx={{ fontSize: 24, mr: '20px' }}
               >
                 {"Contact Us"}
